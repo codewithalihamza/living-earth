@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ascend — Scale Smarter, Not Harder",
+  title: "Travel — See the World, Your Way",
   description:
-    "Drive your funnel forward with clever workflows, analytics, and seamless lead management — all in one immersive command center.",
+    "Plan smarter trips with AI itineraries, live fare tracking, and seamless bookings — your whole journey in one beautiful place.",
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1 };

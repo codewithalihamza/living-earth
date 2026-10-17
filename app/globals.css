@@ -133,3 +133,55 @@ svg.ic.arrow{stroke-width:2}
   [data-reveal]{opacity:1;transform:none;transition:none}
   .dash-bar,.dash-fill{animation:none}
 }
+
+/* ---- nav fix: keep nav above the translated hero-inner ---- */
+.nav{position:relative;z-index:3}
+.hero-inner{position:relative;z-index:1}
+.section{scroll-margin-top:0}
+
+/* PLANS */
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{position:relative;display:flex;flex-direction:column;padding:32px 28px;border-radius:var(--radius-lg);background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.plan.featured{background:radial-gradient(120% 100% at 50% 0%, rgba(93,240,168,.12), transparent 60%), var(--glass-2);border-color:rgba(93,240,168,.35);box-shadow:var(--shadow)}
+.plan-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px;color:var(--accent-ink);background:var(--accent)}
+.plan h3{font-size:18px;font-weight:700}
+.plan-price{margin-top:14px;font-size:42px;font-weight:800;letter-spacing:-.02em}
+.plan-price span{font-size:15px;font-weight:500;color:var(--muted)}
+.plan-desc{margin-top:8px;color:var(--muted);font-size:14.5px;line-height:1.6}
+.plan ul{list-style:none;margin:22px 0 28px;display:flex;flex-direction:column;gap:11px;font-size:14.5px;color:var(--ink)}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li::before{content:"✓";color:var(--accent);font-weight:700}
+.plan .btn{margin-top:auto;justify-content:center}
+
+/* GUIDES */
+.guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.guide{border-radius:var(--radius);background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow:hidden}
+.guide-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.guide summary{list-style:none;cursor:pointer;padding:26px 26px 22px}
+.guide summary::-webkit-details-marker{display:none}
+.guide h3{margin-top:10px;font-size:18px;font-weight:700;line-height:1.35}
+.guide-meta{margin-top:10px;font-size:13px;color:var(--muted-2)}
+.guide-more{display:inline-flex;margin-top:16px;font-size:14px;font-weight:600;color:var(--accent)}
+.guide[open] .guide-more::after{content:" ↑"}
+.guide:not([open]) .guide-more::after{content:" →"}
+.guide-body{padding:0 26px 26px;color:var(--muted);font-size:14.5px;line-height:1.65}
+.guide-body li{margin-left:18px;margin-top:6px}
+
+/* SIGN-UP MODAL */
+.modal-backdrop{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(2,4,10,.7);backdrop-filter:blur(6px);animation:fadeIn .2s ease}
+.modal{position:relative;width:100%;max-width:440px;padding:34px 30px;border-radius:var(--radius-lg);background:var(--bg-2);border:1px solid var(--line-strong);box-shadow:var(--shadow)}
+.modal h3{font-size:24px;font-weight:800;letter-spacing:-.01em}
+.modal p{margin-top:8px;color:var(--muted);font-size:14.5px;line-height:1.6}
+.modal form{margin-top:22px;display:flex;flex-direction:column;gap:14px}
+.modal label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
+.modal input,.modal select{font:inherit;font-size:15px;color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line-strong);border-radius:12px;padding:12px 14px;outline:none}
+.modal input:focus,.modal select:focus{border-color:var(--accent)}
+.modal select option{background:var(--bg-2)}
+.modal .btn{justify-content:center;margin-top:6px}
+.modal-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line-strong);background:rgba(255,255,255,.04);color:var(--ink);font-size:18px;cursor:pointer}
+.modal-close:hover{background:rgba(255,255,255,.1)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+@media (max-width:980px){
+  .plan-grid,.guide-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+}
