@@ -185,3 +185,7 @@ svg.ic.arrow{stroke-width:2}
 @media (max-width:980px){
   .plan-grid,.guide-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
 }
+
+/* ---- spacing between header and hero ---- */
+.hero-inner{padding-top:clamp(56px,10vh,120px);transform:translateY(-4vh)}
+@media (max-width:720px){.hero-inner{padding-top:48px;transform:none}}
